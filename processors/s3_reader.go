@@ -7,9 +7,9 @@ import (
 	"github.com/aws/aws-sdk-go/aws/credentials"
 	"github.com/aws/aws-sdk-go/aws/session"
 	"github.com/aws/aws-sdk-go/service/s3"
-	"github.com/dailyburn/ratchet/data"
-	"github.com/dailyburn/ratchet/logger"
-	"github.com/dailyburn/ratchet/util"
+	"github.com/indosatppi/ratchet/data"
+	"github.com/indosatppi/ratchet/logger"
+	"github.com/indosatppi/ratchet/util"
 )
 
 // S3Reader handles retrieving objects from S3. Use NewS3ObjectReader to read

@@ -5,7 +5,6 @@ go 1.15
 require (
 	github.com/aws/aws-sdk-go v1.36.4
 	github.com/dailyburn/bigquery v0.0.0-20171116202005-b6f18972580e
-	github.com/dailyburn/ratchet v2.0.4+incompatible
 	github.com/jlaffaye/ftp v0.0.0-20201112195030-9aae4d151126
 	github.com/kisielk/sqlstruct v0.0.0-20201105191214-5f3e10d3ab46
 	github.com/pkg/sftp v1.12.0

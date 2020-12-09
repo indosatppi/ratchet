@@ -5,10 +5,10 @@ import (
 	"os"
 	"strings"
 
-	"github.com/dailyburn/ratchet"
-	"github.com/dailyburn/ratchet/data"
-	"github.com/dailyburn/ratchet/logger"
-	"github.com/dailyburn/ratchet/processors"
+	"github.com/indosatppi/ratchet"
+	"github.com/indosatppi/ratchet/data"
+	"github.com/indosatppi/ratchet/logger"
+	"github.com/indosatppi/ratchet/processors"
 )
 
 func ExampleGetRequest() {
