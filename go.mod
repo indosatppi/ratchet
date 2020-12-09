@@ -1,4 +1,4 @@
-module github.com/indosatppi/ratchet
+module github.com/indosatppi/ratchet/v3
 
 go 1.15
 
