@@ -3,7 +3,7 @@ package ratchet
 import (
 	"time"
 
-	"github.com/indosatppi/ratchet/data"
+	"github.com/indosatppi/ratchet/v3/data"
 )
 
 type executionStat struct {

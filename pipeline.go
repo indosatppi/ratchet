@@ -7,9 +7,9 @@ import (
 	"os/signal"
 	"sync"
 
-	"github.com/indosatppi/ratchet/data"
-	"github.com/indosatppi/ratchet/logger"
-	"github.com/indosatppi/ratchet/util"
+	"github.com/indosatppi/ratchet/v3/logger"
+	"github.com/indosatppi/ratchet/v3/data"
+	"github.com/indosatppi/ratchet/v3/util"
 )
 
 // StartSignal is what's sent to a starting DataProcessor

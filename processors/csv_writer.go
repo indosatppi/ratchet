@@ -3,8 +3,8 @@ package processors
 import (
 	"io"
 
-	"github.com/indosatppi/ratchet/data"
-	"github.com/indosatppi/ratchet/util"
+	"github.com/indosatppi/ratchet/v3/data"
+	"github.com/indosatppi/ratchet/v3/util"
 )
 
 // CSVWriter is handles converting data.JSON objects into CSV format,

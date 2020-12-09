@@ -31,10 +31,10 @@ Each data processor is receiving, processing, and then sending data to the next 
 
         govendor sync
         govendor add github.com/indosatppi/ratchet
-        govendor add github.com/indosatppi/ratchet/data
-        govendor add github.com/indosatppi/ratchet/logger
+        govendor add github.com/indosatppi/ratchet/v3/data
+        govendor add github.com/indosatppi/ratchet/v3/logger
         govendor add github.com/indosatppi/ratchet/processors
-        govendor add github.com/indosatppi/ratchet/util
+        govendor add github.com/indosatppi/ratchet/v3/data
 
 While not necessary, it may be helpful to understand
 some of the pipeline concepts used within Ratchet's internals: https://blog.golang.org/pipelines

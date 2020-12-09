@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"os/exec"
 
-	"github.com/indosatppi/ratchet/data"
-	"github.com/indosatppi/ratchet/util"
+	"github.com/indosatppi/ratchet/v3/data"
+	"github.com/indosatppi/ratchet/v3/util"
 )
 
 // SCP executes the scp command, sending the given file to the given destination.

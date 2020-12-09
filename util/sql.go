@@ -6,7 +6,7 @@ import (
 	"sort"
 	"strings"
 
-	"github.com/indosatppi/ratchet/data"
+	"github.com/indosatppi/ratchet/v3/data"
 	"github.com/kisielk/sqlstruct"
 )
 

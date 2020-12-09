@@ -1,6 +1,6 @@
 package util
 
-import "github.com/indosatppi/ratchet/logger"
+import "github.com/indosatppi/ratchet/v3/logger"
 
 // KillPipelineIfErr is an error-checking helper.
 func KillPipelineIfErr(err error, killChan chan error) {

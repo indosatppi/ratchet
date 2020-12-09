@@ -7,7 +7,7 @@ import (
 	"encoding/json"
 	"fmt"
 
-	"github.com/indosatppi/ratchet/logger"
+	"github.com/indosatppi/ratchet/v3/logger"
 )
 
 // JSON is the data type that is passed along all data channels.

@@ -3,8 +3,8 @@ package processors
 import (
 	"io/ioutil"
 
-	"github.com/indosatppi/ratchet/data"
-	"github.com/indosatppi/ratchet/util"
+	"github.com/indosatppi/ratchet/v3/data"
+	"github.com/indosatppi/ratchet/v3/util"
 )
 
 // FileReader opens and reads the contents of the given filename.

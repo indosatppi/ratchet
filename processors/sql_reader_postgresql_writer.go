@@ -3,7 +3,7 @@ package processors
 import (
 	"database/sql"
 
-	"github.com/indosatppi/ratchet/data"
+	"github.com/indosatppi/ratchet/v3/data"
 )
 
 // SQLReaderPostgreSQLWriter performs both the job of a SQLReader and PostgreSQLWriter.

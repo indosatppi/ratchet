@@ -2,9 +2,9 @@ package processors
 
 import (
 	bigquery "github.com/dailyburn/bigquery/client"
-	"github.com/indosatppi/ratchet/data"
-	"github.com/indosatppi/ratchet/logger"
-	"github.com/indosatppi/ratchet/util"
+	"github.com/indosatppi/ratchet/v3/data"
+	"github.com/indosatppi/ratchet/v3/logger"
+	"github.com/indosatppi/ratchet/v3/util"
 )
 
 // BigQueryWriter is used to write data to Google's BigQuery. If the table you want to

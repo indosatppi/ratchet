@@ -4,8 +4,8 @@ import (
 	"container/list"
 	"sync"
 
-	"github.com/indosatppi/ratchet/data"
-	"github.com/indosatppi/ratchet/logger"
+	"github.com/indosatppi/ratchet/v3/data"
+	"github.com/indosatppi/ratchet/v3/logger"
 )
 
 // ConcurrentDataProcessor is a DataProcessor that also defines

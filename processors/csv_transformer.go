@@ -1,8 +1,8 @@
 package processors
 
 import (
-	"github.com/indosatppi/ratchet/data"
-	"github.com/indosatppi/ratchet/util"
+	"github.com/indosatppi/ratchet/v3/data"
+	"github.com/indosatppi/ratchet/v3/util"
 )
 
 // CSVTransformer converts data.JSON objects into a CSV string object

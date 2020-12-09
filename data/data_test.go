@@ -3,7 +3,7 @@ package data_test
 import (
 	"fmt"
 
-	"github.com/indosatppi/ratchet/data"
+	"github.com/indosatppi/ratchet/v3/data"
 )
 
 type testStruct struct {

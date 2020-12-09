@@ -4,9 +4,9 @@ import (
 	"errors"
 
 	bigquery "github.com/dailyburn/bigquery/client"
-	"github.com/indosatppi/ratchet/data"
-	"github.com/indosatppi/ratchet/logger"
-	"github.com/indosatppi/ratchet/util"
+	"github.com/indosatppi/ratchet/v3/data"
+	"github.com/indosatppi/ratchet/v3/logger"
+	"github.com/indosatppi/ratchet/v3/util"
 )
 
 // BigQueryReader is used to query data from Google's BigQuery,

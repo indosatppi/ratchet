@@ -5,8 +5,8 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/indosatppi/ratchet/data"
-	"github.com/indosatppi/ratchet/logger"
+	"github.com/indosatppi/ratchet/v3/data"
+	"github.com/indosatppi/ratchet/v3/logger"
 )
 
 // PostgreSQLInsertData abstracts building and executing a SQL INSERT

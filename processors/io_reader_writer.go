@@ -3,7 +3,7 @@ package processors
 import (
 	"io"
 
-	"github.com/indosatppi/ratchet/data"
+	"github.com/indosatppi/ratchet/v3/data"
 )
 
 // IoReaderWriter performs both the job of a IoReader and IoWriter.

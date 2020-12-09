@@ -4,9 +4,9 @@ import (
 	"database/sql"
 	"errors"
 
-	"github.com/indosatppi/ratchet/data"
-	"github.com/indosatppi/ratchet/logger"
-	"github.com/indosatppi/ratchet/util"
+	"github.com/indosatppi/ratchet/v3/data"
+	"github.com/indosatppi/ratchet/v3/logger"
+	"github.com/indosatppi/ratchet/v3/util"
 )
 
 // SQLExecutor runs the given SQL and swallows any returned data.
