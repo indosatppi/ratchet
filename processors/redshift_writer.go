@@ -6,8 +6,8 @@ import (
 
 	"github.com/aws/aws-sdk-go/aws"
 	"github.com/aws/aws-sdk-go/aws/credentials"
-	"github.com/dailyburn/ratchet/data"
-	"github.com/dailyburn/ratchet/util"
+	"github.com/indosatppi/ratchet/data"
+	"github.com/indosatppi/ratchet/util"
 )
 
 type redshiftManifest struct {
