@@ -26,6 +26,7 @@ type SQLReader struct {
 	BatchSize         int
 	StructDestination interface{}
 	ConcurrencyLevel  int // See ConcurrentDataProcessor
+	Name string
 }
 
 type dataErr struct {
@@ -86,7 +87,12 @@ func (s *SQLReader) Finish(outputChan chan data.JSON, killChan chan error) {
 }
 
 func (s *SQLReader) String() string {
-	return "SQLReader"
+	return createProcessorName("SQLReader", s.Name)
+}
+
+func (s *SQLReader) SetName(name string) *SQLReader {
+	s.Name = name
+	return s
 }
 
 // Concurrency defers to ConcurrentDataProcessor

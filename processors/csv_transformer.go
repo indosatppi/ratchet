@@ -13,6 +13,7 @@ import (
 // generate CSV data and perhaps send it to multiple output stages.
 type CSVTransformer struct {
 	Parameters util.CSVParameters
+	Name       string
 }
 
 // NewCSVTransformer returns a new CSVTransformer wrapping the given io.Writer object
@@ -37,5 +38,10 @@ func (w *CSVTransformer) Finish(outputChan chan data.JSON, killChan chan error) 
 }
 
 func (w *CSVTransformer) String() string {
-	return "CSVTransformer"
+	return createProcessorName("CSVTransformer", w.Name)
+}
+
+func (w *CSVTransformer) SetName(name string) *CSVTransformer {
+	w.Name = name
+	return w
 }

@@ -18,6 +18,7 @@ type SQLReaderPostgreSQLWriter struct {
 	SQLReader
 	PostgreSQLWriter
 	ConcurrencyLevel int // See ConcurrentDataProcessor
+	Name string
 }
 
 // NewSQLReaderPostgreSQLWriter returns a new SQLReaderPostgreSQLWriter ready for static querying.
@@ -48,7 +49,12 @@ func (s *SQLReaderPostgreSQLWriter) Finish(outputChan chan data.JSON, killChan c
 }
 
 func (s *SQLReaderPostgreSQLWriter) String() string {
-	return "SQLReaderPostgreSQLWriter"
+	return createProcessorName("SQLReaderPostgreSQLWriter", s.Name)
+}
+
+func (s *SQLReaderPostgreSQLWriter) SetName(name string) *SQLReaderPostgreSQLWriter {
+	s.Name = name
+	return s
 }
 
 // Concurrency defers to ConcurrentDataProcessor

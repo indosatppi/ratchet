@@ -14,6 +14,7 @@ import (
 // use an IoWriter instead.
 type CSVWriter struct {
 	Parameters util.CSVParameters
+	Name       string
 }
 
 // NewCSVWriter returns a new CSVWriter wrapping the given io.Writer object
@@ -41,5 +42,10 @@ func (w *CSVWriter) Finish(outputChan chan data.JSON, killChan chan error) {
 }
 
 func (w *CSVWriter) String() string {
-	return "CSVWriter"
+	return createProcessorName("CSVWriter", w.Name)
+}
+
+func (w *CSVWriter) SetName(name string) *CSVWriter {
+	w.Name = name
+	return w
 }

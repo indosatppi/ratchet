@@ -18,6 +18,7 @@ type SQLReaderMySQLWriter struct {
 	SQLReader
 	MySQLWriter
 	ConcurrencyLevel int // See ConcurrentDataProcessor
+	Name string
 }
 
 // NewSQLReaderMySQLWriter returns a new SQLReaderMySQLWriter ready for static querying.
@@ -48,7 +49,12 @@ func (s *SQLReaderMySQLWriter) Finish(outputChan chan data.JSON, killChan chan e
 }
 
 func (s *SQLReaderMySQLWriter) String() string {
-	return "SQLReaderMySQLWriter"
+	return createProcessorName("SQLReaderMySQLWriter", s.Name)
+}
+
+func (s *SQLReaderMySQLWriter) SetName(name string) *SQLReaderMySQLWriter {
+	s.Name = name
+	return s
 }
 
 // Concurrency defers to ConcurrentDataProcessor

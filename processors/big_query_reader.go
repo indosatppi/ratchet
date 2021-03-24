@@ -32,6 +32,7 @@ type BigQueryReader struct {
 	UnflattenResults bool   // defaults to false
 	TmpTableName     string // Used when UnflattenResults is true. default to "_ratchet_tmp"
 	ConcurrencyLevel int    // See ConcurrentDataProcessor
+	Name             string
 }
 
 // BigQueryConfig is used when init'ing new BigQueryReader instances.
@@ -120,7 +121,12 @@ func (r *BigQueryReader) ForEachQueryData(d data.JSON, killChan chan error, forE
 }
 
 func (r *BigQueryReader) String() string {
-	return "BigQueryReader"
+	return createProcessorName("BigQueryReader", r.Name)
+}
+
+func (r *BigQueryReader) SetName(name string) *BigQueryReader {
+	r.Name = name
+	return r
 }
 
 // Concurrency defers to ConcurrentDataProcessor

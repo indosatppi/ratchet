@@ -16,6 +16,7 @@ type SftpWriter struct {
 	parameters    *util.SftpParameters
 	initialized   bool
 	CloseOnFinish bool
+	Name string
 }
 
 // NewSftpWriter instantiates a new sftp writer, a connection to the remote server is delayed until data is recv'd by the writer
@@ -59,7 +60,12 @@ func (w *SftpWriter) Finish(outputChan chan data.JSON, killChan chan error) {
 }
 
 func (w *SftpWriter) String() string {
-	return "SftpWriter"
+	return createProcessorName("SftpWriter", w.Name)
+}
+
+func (w *SftpWriter) SetName(name string) *SftpWriter {
+	w.Name = name
+	return w
 }
 
 // ensureInitialized calls connect and then creates the output file on the sftp server at the specified path

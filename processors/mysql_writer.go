@@ -25,6 +25,7 @@ type MySQLWriter struct {
 	OnDupKeyFields   []string
 	ConcurrencyLevel int // See ConcurrentDataProcessor
 	BatchSize        int
+	Name string
 }
 
 // NewMySQLWriter returns a new MySQLWriter
@@ -64,7 +65,12 @@ func (s *MySQLWriter) Finish(outputChan chan data.JSON, killChan chan error) {
 }
 
 func (s *MySQLWriter) String() string {
-	return "MySQLWriter"
+	return createProcessorName("MySQLWriter", s.Name)
+}
+
+func (s *MySQLWriter) SetName(name string) *MySQLWriter {
+	s.Name = name
+	return s
 }
 
 // Concurrency defers to ConcurrentDataProcessor

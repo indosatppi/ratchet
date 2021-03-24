@@ -15,6 +15,7 @@ import (
 type HTTPRequest struct {
 	Request *http.Request
 	Client  *http.Client
+	Name string
 }
 
 // NewHTTPRequest creates a new HTTPRequest and is essentially wrapping net/http's NewRequest
@@ -41,5 +42,10 @@ func (r *HTTPRequest) Finish(outputChan chan data.JSON, killChan chan error) {
 }
 
 func (r *HTTPRequest) String() string {
-	return "HTTPRequest"
+	return createProcessorName("HTTPRequest", r.Name)
+}
+
+func (r *HTTPRequest) SetName(name string) *HTTPRequest {
+	r.Name = name
+	return r
 }

@@ -30,6 +30,7 @@ type PostgreSQLWriter struct {
 	OnDupKeyFields   []string
 	ConcurrencyLevel int // See ConcurrentDataProcessor
 	BatchSize        int
+	Name string
 }
 
 // NewPostgreSQLWriter returns a new PostgreSQLWriter
@@ -69,7 +70,12 @@ func (s *PostgreSQLWriter) Finish(outputChan chan data.JSON, killChan chan error
 }
 
 func (s *PostgreSQLWriter) String() string {
-	return "PostgreSQLWriter"
+	return createProcessorName("PostgreSQLWriter", s.Name)
+}
+
+func (s *PostgreSQLWriter) SetName(name string) *PostgreSQLWriter {
+	s.Name = name
+	return s
 }
 
 // Concurrency defers to ConcurrentDataProcessor

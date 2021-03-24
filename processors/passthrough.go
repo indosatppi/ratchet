@@ -8,6 +8,7 @@ import "github.com/indosatppi/ratchet/v3/data"
 // (see: http://dave.cheney.net/2014/03/25/the-empty-struct)
 type Passthrough struct {
 	i int
+	Name string
 }
 
 // NewPassthrough instantiates a new instance of Passthrough
@@ -25,5 +26,10 @@ func (r *Passthrough) Finish(outputChan chan data.JSON, killChan chan error) {
 }
 
 func (r *Passthrough) String() string {
-	return "Passthrough"
+	return createProcessorName("Passthrough", r.Name)
+}
+
+func (r *Passthrough) SetName(name string) *Passthrough {
+	r.Name = name
+	return r
 }

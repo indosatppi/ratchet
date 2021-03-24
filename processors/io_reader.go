@@ -15,6 +15,7 @@ type IoReader struct {
 	LineByLine bool // defaults to true
 	BufferSize int
 	Gzipped    bool
+	Name string
 }
 
 // NewIoReader returns a new IoReader wrapping the given io.Reader object.
@@ -73,5 +74,10 @@ func (r *IoReader) bufferedRead(killChan chan error, forEach func(d data.JSON)) 
 }
 
 func (r *IoReader) String() string {
-	return "IoReader"
+	return createProcessorName("IoReader", r.Name)
+}
+
+func (r *IoReader) SetName(name string) *IoReader {
+	r.Name = name
+	return r
 }

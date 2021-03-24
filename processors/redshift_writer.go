@@ -45,6 +45,7 @@ type RedshiftWriter struct {
 	// Files uploaded to S3 will be zero-padded to this width.
 	// Defaults to 10.
 	FileNameWidth int
+	Name string
 }
 
 // NewRedshiftProcessor returns a reference to a new Redshift Processor
@@ -150,5 +151,10 @@ func (r *RedshiftWriter) copyQuery() string {
 }
 
 func (r *RedshiftWriter) String() string {
-	return "RedshiftWriter"
+	return createProcessorName("RedshiftWriter", r.Name)
+}
+
+func (r *RedshiftWriter) SetName(name string) *RedshiftWriter {
+	r.Name = name
+	return r
 }

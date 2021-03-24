@@ -25,6 +25,7 @@ type S3Reader struct {
 	DeleteObjects       bool
 	processedObjectKeys []string
 	client              *s3.S3
+	Name string
 }
 
 // NewS3ObjectReader reads a single object from the given S3 bucket
@@ -89,5 +90,10 @@ func (r *S3Reader) processObject(obj *s3.GetObjectOutput, outputChan chan data.J
 }
 
 func (r *S3Reader) String() string {
-	return "S3Reader"
+	return createProcessorName("S3Reader", r.Name)
+}
+
+func (r *S3Reader) SetName(name string) *S3Reader {
+	r.Name = name
+	return r
 }

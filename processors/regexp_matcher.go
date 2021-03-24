@@ -15,12 +15,13 @@ type RegexpMatcher struct {
 	pattern string
 	// Set to true to log each match attempt (logger must be in debug mode).
 	DebugLog bool
+	Name string
 }
 
 // NewRegexpMatcher returns a new RegexpMatcher initialized
 // with the given pattern to match.
 func NewRegexpMatcher(pattern string) *RegexpMatcher {
-	return &RegexpMatcher{pattern, false}
+	return &RegexpMatcher{pattern: pattern}
 }
 
 // ProcessData sends the data it receives to the outputChan only if it matches the supplied regex
@@ -40,5 +41,10 @@ func (r *RegexpMatcher) Finish(outputChan chan data.JSON, killChan chan error) {
 }
 
 func (r *RegexpMatcher) String() string {
-	return "RegexpMatcher"
+	return createProcessorName("RegexpMatcher", r.Name)
+}
+
+func (r *RegexpMatcher) SetName(name string) *RegexpMatcher {
+	r.Name = name
+	return r
 }

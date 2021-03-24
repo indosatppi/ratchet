@@ -10,6 +10,7 @@ import (
 // FileReader opens and reads the contents of the given filename.
 type FileReader struct {
 	filename string
+	Name     string
 }
 
 // NewFileReader returns a new FileReader that will read the entire contents
@@ -31,5 +32,10 @@ func (r *FileReader) Finish(outputChan chan data.JSON, killChan chan error) {
 }
 
 func (r *FileReader) String() string {
-	return "FileReader"
+	return createProcessorName("FileReader", r.Name)
+}
+
+func (r *FileReader) SetName(name string) *FileReader {
+	r.Name = name
+	return r
 }

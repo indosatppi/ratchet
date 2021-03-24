@@ -4,6 +4,7 @@ go 1.15
 
 require (
 	github.com/aws/aws-sdk-go v1.36.4
+	github.com/colinmarc/hdfs/v2 v2.1.1
 	github.com/dailyburn/bigquery v0.0.0-20171116202005-b6f18972580e
 	github.com/jlaffaye/ftp v0.0.0-20201112195030-9aae4d151126
 	github.com/kisielk/sqlstruct v0.0.0-20201105191214-5f3e10d3ab46
@@ -11,4 +12,6 @@ require (
 	golang.org/x/crypto v0.0.0-20201208171446-5f87f3452ae9
 	golang.org/x/oauth2 v0.0.0-20201208152858-08078c50e5b5 // indirect
 	google.golang.org/api v0.36.0 // indirect
+	gopkg.in/jcmturner/gokrb5.v7 v7.5.0
+	gopkg.in/yaml.v2 v2.2.8
 )

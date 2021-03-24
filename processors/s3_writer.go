@@ -21,6 +21,7 @@ type S3Writer struct {
 	config        *aws.Config
 	bucket        string
 	key           string
+	Name string
 }
 
 // NewS3Writer instaniates a new S3Writer
@@ -45,5 +46,10 @@ func (w *S3Writer) Finish(outputChan chan data.JSON, killChan chan error) {
 }
 
 func (w *S3Writer) String() string {
-	return "S3Writer"
+	return createProcessorName("S3Writer", w.Name)
+}
+
+func (w *S3Writer) SetName(name string) *S3Writer {
+	w.Name = name
+	return w
 }

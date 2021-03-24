@@ -28,10 +28,12 @@ func (t *FuncTransformer) Finish(outputChan chan data.JSON, killChan chan error)
 }
 
 func (t *FuncTransformer) String() string {
-	if t.Name != "" {
-		return t.Name
-	}
-	return "FuncTransformer"
+	return createProcessorName("FuncTransformer", t.Name)
+}
+
+func (t *FuncTransformer) SetName(name string) *FuncTransformer {
+	t.Name = name
+	return t
 }
 
 // Concurrency defers to ConcurrentDataProcessor

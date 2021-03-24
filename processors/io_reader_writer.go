@@ -16,6 +16,7 @@ import (
 type IoReaderWriter struct {
 	IoReader
 	IoWriter
+	Name string
 }
 
 // NewIoReaderWriter returns a new IoReaderWriter wrapping the given io.Reader object
@@ -40,5 +41,10 @@ func (r *IoReaderWriter) Finish(outputChan chan data.JSON, killChan chan error) 
 }
 
 func (r *IoReaderWriter) String() string {
-	return "IoReaderWriter"
+	return createProcessorName("IoReaderWriter", r.Name)
+}
+
+func (r *IoReaderWriter) SetName(name string) *IoReaderWriter {
+	r.Name = name
+	return r
 }

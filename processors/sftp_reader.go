@@ -21,6 +21,7 @@ type SftpReader struct {
 	FileNamesOnly bool
 	initialized   bool
 	CloseOnFinish bool
+	Name string
 }
 
 // NewSftpReader instantiates a new sftp reader, a connection to the remote server is delayed until data is recv'd by the reader
@@ -84,7 +85,12 @@ func (r *SftpReader) CloseClient() {
 }
 
 func (r *SftpReader) String() string {
-	return "SftpReader"
+	return createProcessorName("SftpReader", r.Name)
+}
+
+func (r *SftpReader) SetName(name string) *SftpReader {
+	r.Name = name
+	return r
 }
 
 func (r *SftpReader) ensureInitialized(killChan chan error) {

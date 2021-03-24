@@ -22,6 +22,7 @@ type SQLExecutor struct {
 	readDB       *sql.DB
 	query        string
 	sqlGenerator func(data.JSON) (string, error)
+	Name string
 }
 
 // NewSQLExecutor returns a new SQLExecutor
@@ -66,5 +67,10 @@ func (s *SQLExecutor) Finish(outputChan chan data.JSON, killChan chan error) {
 }
 
 func (s *SQLExecutor) String() string {
-	return "SQLExecutor"
+	return createProcessorName("SQLExecutor", s.Name)
+}
+
+func (s *SQLExecutor) SetName(name string) *SQLExecutor {
+	s.Name = name
+	return s
 }

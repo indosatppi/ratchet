@@ -13,6 +13,7 @@ type SCP struct {
 	Port        string // e.g., "2222" -- only send for non-standard ports
 	Object      string // e.g., "/path/to/file.txt"
 	Destination string // e.g., "user@host:/path/to/destination/"
+	Name string
 	// command     *exec.Cmd
 }
 

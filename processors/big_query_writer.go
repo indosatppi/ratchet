@@ -16,6 +16,7 @@ type BigQueryWriter struct {
 	tableName         string
 	fieldsForNewTable map[string]string
 	ConcurrencyLevel  int // See ConcurrentDataProcessor
+	Name              string
 }
 
 // NewBigQueryWriter instantiates a new instance of BigQueryWriter
@@ -56,7 +57,12 @@ func (w *BigQueryWriter) Finish(outputChan chan data.JSON, killChan chan error) 
 }
 
 func (w *BigQueryWriter) String() string {
-	return "BigQueryWriter"
+	return createProcessorName("BigQueryWriter", w.Name)
+}
+
+func (w *BigQueryWriter) SetName(name string) *BigQueryWriter {
+	w.Name = name
+	return w
 }
 
 // Concurrency delegates to ConcurrentDataProcessor

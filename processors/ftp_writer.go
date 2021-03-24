@@ -19,6 +19,7 @@ type FtpWriter struct {
 	username      string
 	password      string
 	path          string
+	Name          string
 }
 
 // NewFtpWriter instantiates new instance of an ftp writer
@@ -71,5 +72,10 @@ func (f *FtpWriter) Finish(outputChan chan data.JSON, killChan chan error) {
 }
 
 func (f *FtpWriter) String() string {
-	return "FtpWriter"
+	return createProcessorName("FtpWriter", f.Name)
+}
+
+func (f *FtpWriter) SetName(name string) *FtpWriter {
+	f.Name = name
+	return f
 }
